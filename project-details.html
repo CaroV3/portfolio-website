@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Caroline Verbeek - Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="/img/cartoon_of_myself.png">
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div class="head">
+    <div class="logo-wrapper">
+        <a href="index.html">
+            <img class="home-button" src="img/cartoon_of_myself.png" alt="home-button">
+        </a>
+    </div>
+    <nav>
+        <a href="about.html">About me</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</div>
+
+
+<div class="section">
+    <div class="content">
+        <img id="project-image" class="project-image" src="" alt="Project image">
+        <div class="text">
+            <h1 id="project-title">Loading...</h1>
+            <div id="project-body"></div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>Website designed and build by me :)</p>
+    <div class="contact-links">
+        <a href="https://github.com/CaroV3" target="_blank"><i class="fa-brands fa-github fa-2x"></i></a>
+        <a href="https://www.linkedin.com/in/caroline-verbeek-9662ab281/" target="_blank"><i class="fa-brands fa-linkedin fa-2x"></i></a>
+    </div>
+</footer>
+
+<script src="projects.js"></script>
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const projectId = params.get("id");
+    const project = projects.find(p => p.id === projectId);
+
+    if (project) {
+        document.getElementById("project-title").innerText = project.title;
+        document.getElementById("project-image").src = project.image;
+        document.getElementById("project-image").alt = project.title;
+        document.getElementById("project-body").innerHTML = project.html;
+    } else {
+        document.getElementById("project-title").innerText = "Project not found";
+        document.getElementById("project-body").innerHTML = "<p>We couldn't find the requested project.</p>";
+    }
+</script>
+
+</body>
+</html>
