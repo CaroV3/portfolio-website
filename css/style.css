@@ -120,10 +120,6 @@ footer a:hover {
     color: #FF6F00;
 }
 
-footer p {
-    color: #1B263E;
-}
-
 .contact-links {
     display: flex;
     gap: 1.2em;
@@ -243,6 +239,12 @@ footer p {
 
 .content a:hover {
     color: #B8E2FF;
+}
+
+.portfolio-link{
+    font-size: 1em;
+    font-weight: normal;
+    margin: 15px 0 15px 0;
 }
 
 @media (max-width: 768px) {
